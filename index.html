@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+         initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title> Administración de paciente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
+    <script src="AppPacients.js"></script>
+</head>
+<body onload = "visualizarCitas()"> 
+    <h1> Administrador de pacientes</h1>
+    <div class="container">
+        <div class="row">
+            <div class=" one-half column" >
+                <h2>CREAR CITAS</h2> 
+                <div id="msj-error"> </div>
+
+                <form id="form">
+                    <label> Nombre mascota </label>
+                    <input
+                        id="mascota"    
+                        type="text"
+                        name="mascota"
+                        class="u-full-width"
+                        placeholder="Nombre mascota"
+                    >
+
+                    <label> Nombre dueño </label>
+                    <input
+                        id="dueno"    
+                        type="text"
+                        name="dueno"
+                        //class="u-full-width"
+                        placeholder="Nombre dueño"
+                    />
+
+                    <label>Fecha</label>
+                    <input
+                        id="fecha"
+                        type="date"
+                        name="date"
+                        class="u-full-width"
+                    />
+
+                    <label>Hora</label>
+                    <input 
+                        id="hora"
+                        type="time"
+                        name="hora"
+                        class="u-full-width"
+                    />
+                    <label>Síntomas</label>
+                    <textarea
+                        id="sintomas"    
+                        name="sintomas"
+                        class="u-full-width"
+                    ></textarea>
+
+                    <button
+                        type="button"
+                        class="u-full-width button-primary"
+                        onclick=agregarCita()
+                    >Agregar Cita</button>            
+                        
+                </form>
+
+            </div>
+            <div class="one-half column">
+                <h2>CITAS</h2>
+                <div id="listado-citas">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
